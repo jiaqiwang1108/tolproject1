@@ -43,11 +43,12 @@ function onPlayerReady(event) {
             } else if (event.target.getCurrentTime() >= 190 && event.target.getCurrentTime() <= 191 && !done3) {
                 done3 = true;
                 stopVideo(3);
-            } else if (event.target.getCurrentTime() >= 225 && !done4) {
-                done4 = true;
+            } else if (event.target.getCurrentTime() >= 225 && event.target.getCurrentTime() <= 225.5) {
                 $("#invent4").css("display", "block");
-            } else if (event.target.getCurrentTime() >= 228.5 && event.target.getCurrentTime() <= 230 && !done5) {
-                done5 = true;
+            } 
+            if (event.target.getCurrentTime() >= 235) {
+                event.target.playVideo();
+            } else if (event.target.getCurrentTime() >= 228.5 && event.target.getCurrentTime() <= 229) {
                 event.target.pauseVideo();
                 setTimeout(continueVideo, 20000, 4);
             }
@@ -64,6 +65,12 @@ function onPlayerStateChange(event) {
     //   setTimeout(stopVideo, 6000);
     //   done = true;
     // }
+    if (event.data == YT.PlayerState.PLAYING) {
+        $("#invent1").css("display", "none");
+        $("#invent2").css("display", "none");
+        $("#invent3").css("display", "none");
+        $("#invent4").css("display", "none");
+    }
 }
 
 function stopVideo(id_num) {
