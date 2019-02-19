@@ -30,7 +30,7 @@ section {
 #player{
     position: absolute;
     z-index: -10;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 #title{
@@ -43,7 +43,7 @@ section {
     background-color: rgba(244,244,244,0.9);/* #f4f4f4 背景半透明了，为了看到后面的视频*/
     width: 920px;
     height: 520px;
-    margin-top: 10px;
+    margin-top: 30px;
     padding: 80px 80px 120px 80px;
 }
 

@@ -46,9 +46,7 @@ function onPlayerReady(event) {
             } else if (event.target.getCurrentTime() >= 225 && event.target.getCurrentTime() <= 225.5) {
                 $("#invent4").css("display", "block");
             } 
-            if (event.target.getCurrentTime() >= 235) {
-                event.target.playVideo();
-            } else if (event.target.getCurrentTime() >= 228.5 && event.target.getCurrentTime() <= 229) {
+            if (event.target.getCurrentTime() >= 228.5 && event.target.getCurrentTime() <= 229) {
                 event.target.pauseVideo();
                 setTimeout(continueVideo, 20000, 4);
             }
