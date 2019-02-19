@@ -27,6 +27,8 @@ function onYouTubeIframeAPIReady() {
 var done1 = false;
 var done2 = false;
 var done3 = false;
+var done4 = false;
+var done5 = false;
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
     event.target.playVideo();
@@ -41,14 +43,16 @@ function onPlayerReady(event) {
             } else if (event.target.getCurrentTime() >= 190 && event.target.getCurrentTime() <= 191 && !done3) {
                 done3 = true;
                 stopVideo(3);
-            }
-            if (event.target.getCurrentTime() >= 227 && event.target.getCurrentTime() <= 237) {
+            } else if (event.target.getCurrentTime() >= 225 && !done4) {
+                done4 = true;
                 $("#invent4").css("display", "block");
-            } else {
-                $("#invent4").css("display", "none");
+            } else if (event.target.getCurrentTime() >= 228.5 && event.target.getCurrentTime() <= 230 && !done5) {
+                done5 = true;
+                event.target.pauseVideo();
+                setTimeout(continueVideo, 20000, 4);
             }
         },
-        1000
+        500
     );
 }
 
